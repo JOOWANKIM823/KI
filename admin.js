@@ -277,6 +277,7 @@ function normalizeExcelRow(raw) {
 
 function renderExcelPreview() {
   if (!parsedUploadRows.length) {
+    excelPreviewBody.innerHTML = `<tr><td colspan="8">업로드된 데이터가 없습니다.</td></tr>`;
     excelPreviewBody.innerHTML = `<tr><td colspan="7">업로드된 데이터가 없습니다.</td></tr>`;
     return;
   }
@@ -286,6 +287,11 @@ function renderExcelPreview() {
       <td>${r.name}</td>
       <td>${r.studentId}</td>
       <td>${r.cohort || ""}</td>
+      <td>${r.department || ""}</td>
+      <td>${r.company || ""}</td>
+      <td>${r.position || ""}</td>
+      <td>${r.mobile || ""}</td>
+      <td>${r.email || ""}</td>
       <td>${r.team || ""}</td>
       <td>${r.position || ""}</td>
       <td>${r.homeId || ""}</td>
@@ -300,15 +306,46 @@ function parseExcelFile(file) {
     return;
   }
   if (typeof XLSX === "undefined") {
+    showMessage("excelMessage", "엑셀 라이브러리 로드 실패: 네트워크를 확인 후 새로고침해 주세요.");
     showMessage("excelMessage", "엑셀 파서 로드 실패: 네트워크 상태를 확인해 주세요.");
     return;
   }
 
   const reader = new FileReader();
+  reader.onerror = () => {
+    showMessage("excelMessage", "파일 읽기에 실패했습니다.");
+  };
+
   reader.onload = (e) => {
     try {
       const data = new Uint8Array(e.target.result);
       const wb = XLSX.read(data, { type: "array" });
+      const firstSheetName = wb.SheetNames[0];
+      if (!firstSheetName) {
+        showMessage("excelMessage", "첫 시트를 찾을 수 없습니다.");
+        return;
+      }
+
+      const sheet = wb.Sheets[firstSheetName];
+      const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "", blankrows: false, raw: false });
+      if (!rows.length) {
+        parsedUploadRows = [];
+        renderExcelPreview();
+        showMessage("excelMessage", "시트 데이터가 비어 있습니다.");
+        return;
+      }
+
+      const headerIndex = rows.findIndex((r) => r.map((v) => String(v).trim()).includes("이름") && r.map((v) => String(v).trim()).includes("학번"));
+      if (headerIndex < 0) {
+        showMessage("excelMessage", "헤더를 찾지 못했습니다. 필수 헤더(이름, 학번)와 컬럼명을 확인해 주세요.");
+        return;
+      }
+
+      const headerRow = rows[headerIndex].map((h) => String(h).trim());
+      const requiredHeaders = ["이름", "학번"];
+      const missingHeaders = requiredHeaders.filter((h) => !headerRow.includes(h));
+      if (missingHeaders.length) {
+        showMessage("excelMessage", `필수 컬럼 누락: ${missingHeaders.join(", ")}. 필요 컬럼: 이름, 학번, 기수, 분과, 소속, 직위, 휴대전화, 이메일, 전화, 회사주소, 자택주소`);
       const sheet = wb.Sheets[wb.SheetNames[0]];
       const json = XLSX.utils.sheet_to_json(sheet, { defval: "" });
       if (!json.length) {
@@ -328,11 +365,31 @@ function parseExcelFile(file) {
 
       const errors = [];
       parsedUploadRows = [];
+      const dataRows = rows.slice(headerIndex + 1);
+
+      dataRows.forEach((rowArr, idx) => {
+        const obj = {};
+        headerRow.forEach((h, colIdx) => {
+          obj[h] = String(rowArr[colIdx] ?? "").trim();
+        });
+        const result = normalizeExcelRow(obj, headerIndex + idx + 2);
       json.forEach((row, idx) => {
         const result = normalizeExcelRow(row, idx + 2);
         if (result.error) errors.push(result.error);
         else parsedUploadRows.push(result.data);
       });
+
+      console.log("[Excel Parse] parsedRows length:", parsedUploadRows.length);
+      console.log("[Excel Parse] first row:", parsedUploadRows[0] || null);
+
+      renderExcelPreview();
+      const errorText = errors.length ? ` / 실패 ${errors.length}건 (${errors.slice(0, 5).join("; ")}${errors.length > 5 ? " ..." : ""})` : "";
+      showMessage("excelMessage", `파싱 완료: 성공 ${parsedUploadRows.length}건${errorText}`);
+    } catch (err) {
+      console.error(err);
+      showMessage("excelMessage", `파싱 실패: ${err.message}`);
+    }
+  };
 
       renderExcelPreview();
       const errorText = errors.length ? ` / 실패 ${errors.length}건 (${errors.slice(0, 5).join("; ")}${errors.length > 5 ? " ..." : ""})` : "";
