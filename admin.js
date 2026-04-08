@@ -70,6 +70,9 @@ function memberPayload() {
     email: $("email").value.trim(),
     photo: safeHttpUrl($("photo").value) || (studentId ? `/photos/${studentId}.jpg` : ""),
     company: $("company").value.trim(),
+    phone: $("phone").value.trim(),
+    email: $("email").value.trim(),
+    photoUrl: $("photoUrl").value.trim(),
     cohort: $("cohort").value.trim(),
     team: $("team").value.trim(),
     position: $("position").value.trim(),
@@ -80,6 +83,8 @@ function memberPayload() {
     homeAddress: $("homeAddress").value.trim(),
     applicationFile: safeHttpUrl($("applicationFile").value),
     introFile: safeHttpUrl($("introFile").value),
+    admissionDocUrl: $("admissionDocUrl").value.trim(),
+    introDocUrl: $("introDocUrl").value.trim(),
   };
 }
 
@@ -107,6 +112,23 @@ function renderMembersAdmin() {
       </td>
     </tr>`;
   }).join("") || `<tr><td colspan="8">회원 데이터가 없습니다.</td></tr>`;
+  const members = getData("members");
+  memberAdminBody.innerHTML = members.map((m) => `
+    <tr>
+      <td>${m.name}</td>
+      <td>${m.homeId}</td>
+      <td>${m.phone}<br>${m.email}</td>
+      <td>${m.cohort || ""}/${m.team || ""}/${m.position || ""}</td>
+      <td>${m.parkingEnabled}${m.parkingNumber ? ` (${m.parkingNumber})` : ""}</td>
+      <td>
+        <button type="button" data-view-admission="${m.id}">입학지원서 보기</button>
+        <button type="button" data-view-intro="${m.id}">자기소개서 보기</button>
+      </td>
+      <td class="row-actions">
+        <button class="edit" type="button" data-edit-member="${m.id}">수정</button>
+        <button class="del" type="button" data-del-member="${m.id}">삭제</button>
+      </td>
+    </tr>`).join("") || `<tr><td colspan="7">회원 데이터가 없습니다.</td></tr>`;
 
   renderAttendanceRows();
 }
@@ -115,6 +137,7 @@ memberForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const payload = memberPayload();
   let members = getData("members") || [];
+  let members = getData("members");
   const idx = members.findIndex((m) => m.id === payload.id);
   if (idx >= 0) members[idx] = payload;
   else members = [payload, ...members];
@@ -131,6 +154,10 @@ memberAdminBody.addEventListener("click", (e) => {
   const editId = e.target.dataset.editMember;
   const delId = e.target.dataset.delMember;
   const appId = e.target.dataset.viewApp;
+  const members = getData("members");
+  const editId = e.target.dataset.editMember;
+  const delId = e.target.dataset.delMember;
+  const adId = e.target.dataset.viewAdmission;
   const introId = e.target.dataset.viewIntro;
 
   if (editId) {
@@ -300,6 +327,12 @@ $("excelAppendBtn").addEventListener("click", () => applyUpload("append"));
 $("excelOverwriteBtn").addEventListener("click", () => {
   if (!window.confirm("기존 회원 데이터를 모두 덮어쓰시겠습니까?")) return;
   applyUpload("overwrite");
+    setData("members", members.filter((m) => m.id !== delId));
+    renderMembersAdmin();
+  }
+
+  if (adId) openInNewTab((members.find((m) => m.id === adId) || {}).admissionDocUrl);
+  if (introId) openInNewTab((members.find((m) => m.id === introId) || {}).introDocUrl);
 });
 
 // 출석관리
@@ -313,6 +346,27 @@ function renderAttendanceRows() {
     const sum = calculateAttendanceSummary(m.id, all);
     const status = weekRecord[m.id] || "출석";
     return `<tr><td>${m.name}</td><td>${m.cohort || ""}/${m.team || ""}</td><td><select data-attendance-member="${m.id}"><option value="출석" ${status === "출석" ? "selected" : ""}>출석</option><option value="결석" ${status === "결석" ? "selected" : ""}>결석</option></select></td><td>${sum.present} / ${sum.absent}</td></tr>`;
+
+function renderAttendanceRows() {
+  const week = String($("attendanceWeek").value || "1");
+  const members = getData("members");
+  const all = getData("attendanceRecords");
+  const weekRecord = all[week] || {};
+
+  attendanceBody.innerHTML = members.map((m) => {
+    const sum = calculateAttendanceSummary(m.id, all);
+    const status = weekRecord[m.id] || "출석";
+    return `<tr>
+      <td>${m.name}</td>
+      <td>${m.cohort || ""}/${m.team || ""}</td>
+      <td>
+        <select data-attendance-member="${m.id}">
+          <option value="출석" ${status === "출석" ? "selected" : ""}>출석</option>
+          <option value="결석" ${status === "결석" ? "selected" : ""}>결석</option>
+        </select>
+      </td>
+      <td>${sum.present} / ${sum.absent}</td>
+    </tr>`;
   }).join("") || `<tr><td colspan="4">회원이 없습니다.</td></tr>`;
 }
 
@@ -320,6 +374,7 @@ $("loadAttendanceBtn").addEventListener("click", renderAttendanceRows);
 $("saveAttendanceBtn").addEventListener("click", () => {
   const week = String($("attendanceWeek").value || "1");
   const all = getData("attendanceRecords") || {};
+  const all = getData("attendanceRecords");
   const weekRecord = {};
   document.querySelectorAll("[data-attendance-member]").forEach((sel) => {
     weekRecord[sel.dataset.attendanceMember] = sel.value;
@@ -334,11 +389,15 @@ $("saveAttendanceBtn").addEventListener("click", () => {
 const lectureForm = $("lectureForm");
 const lectureBody = $("lectureBody");
 const lectureComments = $("lectureComments");
+// 강의평가
+const lectureForm = $("lectureForm");
+const lectureBody = $("lectureBody");
 
 function resetLectureForm() {
   lectureForm.reset();
   $("lectureId").value = "";
   $("lectureFormTitle").textContent = "강사 평가 추가";
+  $("lectureFormTitle").textContent = "강의평가 추가";
 }
 
 function lecturePayload() {
@@ -349,6 +408,10 @@ function lecturePayload() {
     topic: $("topic").value.trim(),
     score: Number($("score").value),
     rank: Number($("rank").value),
+    date: $("lectureDate").value,
+    instructor: $("instructor").value.trim(),
+    topic: $("topic").value.trim(),
+    score: Number($("score").value),
     comment: $("comment").value.trim(),
   };
 }
@@ -378,12 +441,23 @@ function renderLectures() {
   lectureComments.innerHTML = rows
     .map((r) => `<div class="comment-item"><strong>[${r.week}주차] ${r.instructor} - ${r.topic}</strong><p>${r.comment || "코멘트 없음"}</p></div>`)
     .join("") || `<p class="muted">표시할 코멘트가 없습니다.</p>`;
+function renderLectures() {
+  const filterWeek = $("lectureWeekFilter").value.trim();
+  let rows = getData("lectureEvaluations");
+  if (filterWeek) rows = rows.filter((r) => String(r.week) === filterWeek);
+  rows.sort((a, b) => (a.week - b.week) || a.date.localeCompare(b.date));
+
+  lectureBody.innerHTML = rows.map((r) => `<tr>
+    <td>${r.week}</td><td>${r.date}</td><td>${r.instructor}</td><td>${r.topic}</td><td>${r.score}</td><td>${r.comment || ""}</td>
+    <td class="row-actions"><button class="edit" type="button" data-edit-lecture="${r.id}">수정</button><button class="del" type="button" data-del-lecture="${r.id}">삭제</button></td>
+  </tr>`).join("") || `<tr><td colspan="7">강의평가 데이터가 없습니다.</td></tr>`;
 }
 
 lectureForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const payload = lecturePayload();
   let rows = getData("lectureEvaluations") || [];
+  let rows = getData("lectureEvaluations");
   const idx = rows.findIndex((r) => r.id === payload.id);
   if (idx >= 0) rows[idx] = payload;
   else rows = [payload, ...rows];
@@ -398,6 +472,7 @@ $("lectureFilterBtn").addEventListener("click", renderLectures);
 
 lectureBody.addEventListener("click", (e) => {
   const rows = getData("lectureEvaluations") || [];
+  const rows = getData("lectureEvaluations");
   const editId = e.target.dataset.editLecture;
   const delId = e.target.dataset.delLecture;
 
@@ -419,6 +494,17 @@ lectureBody.addEventListener("click", (e) => {
     setData("lectureEvaluations", rows.filter((x) => x.id !== delId));
     renderLectures();
     showMessage("lectureMessage", "강사 평가가 삭제되었습니다.");
+    $("lectureDate").value = r.date;
+    $("instructor").value = r.instructor;
+    $("topic").value = r.topic;
+    $("score").value = r.score;
+    $("comment").value = r.comment || "";
+    $("lectureFormTitle").textContent = "강의평가 수정";
+  }
+
+  if (delId) {
+    setData("lectureEvaluations", rows.filter((x) => x.id !== delId));
+    renderLectures();
   }
 });
 
@@ -455,6 +541,78 @@ function preloadMemberFromQuery() {
   $("memberFormTitle").textContent = "회원 수정";
   switchTab("members");
 }
+
+function resetExpenseForm() {
+  expenseForm.reset();
+  $("expenseId").value = "";
+  $("expenseFormTitle").textContent = "지출 추가";
+}
+
+function expensePayload() {
+  return {
+    id: $("expenseId").value || newId("exp"),
+    categoryMain: $("categoryMain").value.trim(),
+    categorySub: $("categorySub").value.trim(),
+    expenseMonth: $("expenseMonth").value.trim(),
+    expenseDate: $("expenseDate").value,
+    description: $("description").value.trim(),
+    amount: Number($("amount").value),
+    method: $("method").value.trim(),
+    note: $("note").value.trim(),
+  };
+}
+
+function won(n) { return `${Number(n || 0).toLocaleString("ko-KR")}원`; }
+
+function renderExpenses() {
+  const rows = getData("expenseRecords").sort((a, b) => a.expenseDate.localeCompare(b.expenseDate));
+  expenseBody.innerHTML = rows.map((r) => `<tr>
+    <td>${r.categoryMain}</td><td>${r.categorySub}</td><td>${r.expenseMonth}</td><td>${r.expenseDate}</td><td>${r.description}</td><td>${won(r.amount)}</td><td>${r.method}</td><td>${r.note || ""}</td>
+    <td class="row-actions"><button class="edit" type="button" data-edit-expense="${r.id}">수정</button><button class="del" type="button" data-del-expense="${r.id}">삭제</button></td>
+  </tr>`).join("") || `<tr><td colspan="9">지출 데이터가 없습니다.</td></tr>`;
+
+  const total = rows.reduce((s, r) => s + Number(r.amount || 0), 0);
+  const byMonth = rows.reduce((acc, r) => ({ ...acc, [r.expenseMonth]: (acc[r.expenseMonth] || 0) + Number(r.amount || 0) }), {});
+  const byCategory = rows.reduce((acc, r) => ({ ...acc, [r.categoryMain]: (acc[r.categoryMain] || 0) + Number(r.amount || 0) }), {});
+
+  expenseSummary.innerHTML = `
+    <div><strong>전체 합계:</strong> ${won(total)}</div>
+    <div><strong>월별 합계:</strong> ${Object.entries(byMonth).map(([k, v]) => `${k} ${won(v)}`).join(" | ") || "-"}</div>
+    <div><strong>항목별 합계:</strong> ${Object.entries(byCategory).map(([k, v]) => `${k} ${won(v)}`).join(" | ") || "-"}</div>`;
+}
+
+expenseForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const payload = expensePayload();
+  let rows = getData("expenseRecords");
+  const idx = rows.findIndex((r) => r.id === payload.id);
+  if (idx >= 0) rows[idx] = payload;
+  else rows = [payload, ...rows];
+  setData("expenseRecords", rows);
+  resetExpenseForm();
+  renderExpenses();
+});
+
+$("expenseResetBtn").addEventListener("click", resetExpenseForm);
+
+expenseBody.addEventListener("click", (e) => {
+  const rows = getData("expenseRecords");
+  const editId = e.target.dataset.editExpense;
+  const delId = e.target.dataset.delExpense;
+
+  if (editId) {
+    const r = rows.find((x) => x.id === editId);
+    if (!r) return;
+    Object.entries(r).forEach(([k, v]) => { const el = $(k); if (el) el.value = v; });
+    $("expenseId").value = r.id;
+    $("expenseFormTitle").textContent = "지출 수정";
+  }
+
+  if (delId) {
+    setData("expenseRecords", rows.filter((x) => x.id !== delId));
+    renderExpenses();
+  }
+});
 
 renderMembersAdmin();
 renderAttendanceRows();
