@@ -5,11 +5,7 @@ const STORAGE_KEYS = {
   expenseRecords: "expenseRecords",
 };
 
-const DEFAULT_PHOTO =
-  "data:image/svg+xml;utf8," +
-  encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>
-  <rect width='100%' height='100%' fill='#e2e8f0'/><circle cx='100' cy='76' r='36' fill='#94a3b8'/>
-  <rect x='44' y='124' width='112' height='54' rx='22' fill='#94a3b8'/></svg>`);
+const DEFAULT_PHOTO = "/images/default.png";
 
 const seed = {
   members: [
@@ -40,7 +36,7 @@ function normalizeMembersShape(rows) {
     phone: m.phone || m.mobile || "",
     fax: m.fax || "",
     email: m.email || "",
-    photo: m.photo || m.photoUrl || "",
+    photo: m.photo || m.photoUrl || (m.studentId ? `/photos/${m.studentId}.jpg` : ""),
     company: m.company || "",
     cohort: m.cohort || "",
     team: m.team || "",

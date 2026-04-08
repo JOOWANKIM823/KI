@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>원우 운영관리 - 관리자</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script defer src="data.js"></script>
   <script defer src="admin.js"></script>
 </head>
@@ -62,12 +63,29 @@
       </div>
 
       <div class="panel">
+        <h2>엑셀 업로드</h2>
+        <div class="inline-form">
+          <input id="excelFileInput" type="file" accept=".xlsx,.csv" />
+          <button id="excelParseBtn" type="button">엑셀 업로드</button>
+          <button id="excelAppendBtn" type="button" class="primary">추가</button>
+          <button id="excelOverwriteBtn" type="button" class="sub">전체 덮어쓰기</button>
+        </div>
+        <p id="excelMessage" class="status-msg" role="status" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>이름</th><th>학번</th><th>기수</th><th>조</th><th>직책</th><th>홈페이지ID</th><th>사진</th></tr></thead>
+            <tbody id="excelPreviewBody"><tr><td colspan="7">업로드된 데이터가 없습니다.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
         <h2>회원 목록</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>이름</th><th>ID</th><th>연락처</th><th>기수/조/직책</th><th>주차</th><th>서류</th><th>작업</th>
+                <th>사진</th><th>이름</th><th>ID</th><th>연락처</th><th>기수/조/직책</th><th>주차</th><th>서류</th><th>작업</th>
               </tr>
             </thead>
             <tbody id="memberAdminBody"></tbody>
