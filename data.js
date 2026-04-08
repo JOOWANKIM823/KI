@@ -6,11 +6,22 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_PHOTO = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%' height='100%' fill='#e2e8f0'/><circle cx='100' cy='76' r='36' fill='#94a3b8'/><rect x='44' y='124' width='112' height='54' rx='22' fill='#94a3b8'/></svg>`);
+const DEFAULT_PHOTO = "/images/default.png";
 
 const seed = {
   members: [
     { id: "m1", name: "김민수", homeId: "minsu", studentId: "01-001", department: "경영", birth: "1990-01-01", mobile: "010-1111-2222", phone: "02-1234-5678", fax: "02-111-1111", email: "minsu@example.com", photo: "", company: "오픈AI코리아", cohort: "1기", team: "A조", position: "원우", parkingEnabled: "Y", parkingNumber: "A-101", memo: "", companyAddress: "서울시 강남구", homeAddress: "서울시 송파구", applicationFile: "", introFile: "" },
     { id: "m2", name: "이서연", homeId: "seoyeon", studentId: "01-002", department: "마케팅", birth: "1991-02-02", mobile: "010-2222-3333", phone: "02-2233-4455", fax: "02-222-2222", email: "seoyeon@example.com", photo: "", company: "에이비씨", cohort: "1기", team: "B조", position: "조장", parkingEnabled: "N", parkingNumber: "", memo: "", companyAddress: "서울시 서초구", homeAddress: "서울시 성동구", applicationFile: "", introFile: "" },
+const DEFAULT_PHOTO =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>
+  <rect width='100%' height='100%' fill='#e2e8f0'/><circle cx='100' cy='76' r='36' fill='#94a3b8'/>
+  <rect x='44' y='124' width='112' height='54' rx='22' fill='#94a3b8'/></svg>`);
+
+const seed = {
+  members: [
+    { id: "m1", name: "김민수", homeId: "minsu", phone: "010-1111-2222", email: "minsu@example.com", photoUrl: "", cohort: "1기", team: "A조", position: "원우", parkingEnabled: "Y", parkingNumber: "A-101", memo: "", admissionDocUrl: "", introDocUrl: "" },
+    { id: "m2", name: "이서연", homeId: "seoyeon", phone: "010-2222-3333", email: "seoyeon@example.com", photoUrl: "", cohort: "1기", team: "B조", position: "조장", parkingEnabled: "N", parkingNumber: "", memo: "", admissionDocUrl: "", introDocUrl: "" },
   ],
   attendanceRecords: {},
   lectureEvaluations: [],
@@ -74,6 +85,14 @@ function setData(keyName, value) {
   const key = STORAGE_KEYS[keyName];
   if (!key) return;
   localStorage.setItem(key, JSON.stringify(value));
+function getData(keyName) {
+  ensureStorage();
+  const raw = localStorage.getItem(STORAGE_KEYS[keyName]);
+  try { return JSON.parse(raw); } catch { return seed[keyName]; }
+}
+
+function setData(keyName, value) {
+  localStorage.setItem(STORAGE_KEYS[keyName], JSON.stringify(value));
 }
 
 function newId(prefix) {
@@ -101,6 +120,8 @@ function safeImageSrc(value) {
 
 function photoCandidates(photoUrl) {
   const safe = safeImageSrc(photoUrl);
+function photoCandidates(photoUrl) {
+  const safe = safeHttpUrl(photoUrl);
   return safe ? [safe, DEFAULT_PHOTO] : [DEFAULT_PHOTO];
 }
 
@@ -118,6 +139,25 @@ function calculateAttendanceSummary(memberId, attendanceRecords) {
     const current = (weekMap && typeof weekMap === "object") ? weekMap[memberId] : undefined;
     if (current === "출석") present += 1;
     if (current === "결석") absent += 1;
+function photoCandidates(name, photoUrl) {
+  const n = encodeURIComponent((name || "").trim());
+  const local = ["jpg", "jpeg", "png", "webp"].map((e) => `photos/${n}.${e}`);
+  const list = [];
+  if ((photoUrl || "").trim()) list.push(photoUrl.trim());
+  return [...list, ...local, DEFAULT_PHOTO];
+}
+
+function openInNewTab(url) {
+  if (!url) return;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+function calculateAttendanceSummary(memberId, attendanceRecords) {
+  let present = 0;
+  let absent = 0;
+  Object.values(attendanceRecords).forEach((weekMap) => {
+    if (weekMap[memberId] === "출석") present += 1;
+    if (weekMap[memberId] === "결석") absent += 1;
   });
   return { present, absent };
 }
