@@ -57,6 +57,15 @@ function showMessage(id, message) {
   }, 3000);
 }
 
+function checkDuplicateIds(ids) {
+  const dup = ids.filter((id) => document.querySelectorAll(`#${id}`).length !== 1);
+  if (dup.length) {
+    const msg = `DOM 점검 필요(중복 또는 누락 id): ${dup.join(", ")}`;
+    console.warn(msg);
+    showMessage("excelMessage", msg);
+  }
+}
+
 // 회원관리
 const memberForm = $("memberForm");
 const memberAdminBody = $("memberAdminBody");
@@ -152,6 +161,10 @@ function renderMembersAdmin() {
 memberForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const payload = memberPayload();
+  console.log("[Excel Apply] append target count:", parsedUploadRows.length);
+  let members = getData("members") || [];
+  const idx = members.findIndex((m) => m.id === payload.id);
+  if (idx >= 0) members[idx] = { ...members[idx], ...payload };
   let members = getData("members") || [];
   const idx = members.findIndex((m) => m.id === payload.id);
   if (idx >= 0) members[idx] = { ...members[idx], ...payload };
@@ -422,6 +435,11 @@ function applyUpload(mode) {
   }
 
   if (mode === "overwrite") {
+    console.log("[Excel Apply] overwrite target count:", parsedUploadRows.length);
+    const normalized = parsedUploadRows.map((r) => ({ ...r, id: newId("m") }));
+    setData("members", normalized);
+    renderMembersAdmin();
+    console.log("[Excel Apply] saved members.length:", normalized.length);
     const normalized = parsedUploadRows.map((r) => ({ ...r, id: newId("m") }));
     setData("members", normalized);
     renderMembersAdmin();
@@ -429,6 +447,7 @@ function applyUpload(mode) {
     return;
   }
 
+  console.log("[Excel Apply] append target count:", parsedUploadRows.length);
   let members = getData("members") || [];
   let added = 0;
   let updated = 0;
@@ -446,6 +465,7 @@ function applyUpload(mode) {
 
   setData("members", members);
   renderMembersAdmin();
+  console.log("[Excel Apply] saved members.length:", members.length);
   showMessage("excelMessage", `추가 완료: 신규 ${added}건, 갱신 ${updated}건`);
 }
 
@@ -653,6 +673,8 @@ function renderExpenses() {
 expenseForm.addEventListener("submit", (e) => { e.preventDefault(); const payload = expensePayload(); let rows = getData("expenseRecords") || []; const idx = rows.findIndex((r) => r.id === payload.id); if (idx >= 0) rows[idx] = payload; else rows = [payload, ...rows]; setData("expenseRecords", rows); resetExpenseForm(); renderExpenses(); showMessage("expenseMessage", "지출 정보가 저장되었습니다."); });
 $("expenseResetBtn").addEventListener("click", resetExpenseForm);
 expenseBody.addEventListener("click", (e) => { const rows = getData("expenseRecords") || []; const editId = e.target.dataset.editExpense; const delId = e.target.dataset.delExpense; if (editId) { const r = rows.find((x) => x.id === editId); if (!r) return; Object.entries(r).forEach(([k, v]) => { const el = $(k); if (el) el.value = v; }); $("expenseId").value = r.id; $("expenseFormTitle").textContent = "지출 수정"; } if (delId) { if (!window.confirm("해당 지출내역을 삭제하시겠습니까?")) return; setData("expenseRecords", rows.filter((x) => x.id !== delId)); renderExpenses(); showMessage("expenseMessage", "지출 정보가 삭제되었습니다."); } });
+
+checkDuplicateIds(["excelFileInput","excelParseBtn","excelAppendBtn","excelOverwriteBtn","excelPreviewBody","memberAdminBody","excelMessage"]);
 
 function preloadMemberFromQuery() {
   const id = new URLSearchParams(window.location.search).get("memberId");
