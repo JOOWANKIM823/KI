@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원우 운영관리 - 조회</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>원우 조회</h1>
+    <a class="btn-link" href="admin.html">관리자 페이지 이동</a>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <h2>원우 검색</h2>
+      <div class="form-row">
+        <label for="searchInput">이름</label>
+        <input id="searchInput" type="search" placeholder="이름으로 검색" />
+      </div>
+      <p id="memberCount" class="muted"></p>
+    </section>
+
+    <section class="panel">
+      <h2>원우 목록</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>사진</th>
+              <th>이름</th>
+              <th>기수/조/직책</th>
+              <th>연락</th>
+            </tr>
+          </thead>
+          <tbody id="memberTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
