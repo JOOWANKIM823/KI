@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원우 상세 프로필</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="data.js"></script>
+  <script defer src="member.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>원우 상세 프로필</h1>
+    <div class="inline-form">
+      <a class="btn-link" href="index.html">목록으로</a>
+      <a class="btn-link" id="adminEditLink" href="admin.html">관리자 수정</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="profile-card panel" id="profileCard"></section>
+    <section class="panel">
+      <h2>상세 정보</h2>
+      <div class="table-wrap profile-table-wrap">
+        <table class="profile-table">
+          <tbody id="detailBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
