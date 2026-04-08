@@ -5,6 +5,7 @@ const STORAGE_KEYS = {
   expenseRecords: "expenseRecords",
 };
 
+const DEFAULT_PHOTO = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%' height='100%' fill='#e2e8f0'/><circle cx='100' cy='76' r='36' fill='#94a3b8'/><rect x='44' y='124' width='112' height='54' rx='22' fill='#94a3b8'/></svg>`);
 const DEFAULT_PHOTO = "/images/default.png";
 
 const seed = {
@@ -41,6 +42,7 @@ function normalizeMembersShape(rows) {
     homeId: m.homeId || "",
     studentId: m.studentId || "",
     department: m.department || "",
+    field: m.field || "",
     birth: m.birth || "",
     mobile: m.mobile || m.phone || "",
     phone: m.phone || m.mobile || "",
@@ -48,6 +50,8 @@ function normalizeMembersShape(rows) {
     email: m.email || "",
     photo: m.photo || m.photoUrl || (m.studentId ? `/photos/${m.studentId}.jpg` : ""),
     company: m.company || "",
+    businessNumber: m.businessNumber || "",
+    memberType: m.memberType || "",
     cohort: m.cohort || "",
     team: m.team || "",
     position: m.position || "",
@@ -106,6 +110,16 @@ function safeHttpUrl(value) {
   }
 }
 
+
+function safeImageSrc(value) {
+  const v = (value || "").trim();
+  if (!v) return "";
+  if (v.startsWith("/") || v.startsWith("./") || v.startsWith("../")) return v;
+  return safeHttpUrl(v);
+}
+
+function photoCandidates(photoUrl) {
+  const safe = safeImageSrc(photoUrl);
 function photoCandidates(photoUrl) {
   const safe = safeHttpUrl(photoUrl);
   return safe ? [safe, DEFAULT_PHOTO] : [DEFAULT_PHOTO];

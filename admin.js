@@ -5,6 +5,16 @@ const panels = [...document.querySelectorAll(".tab-panel")];
 let parsedUploadRows = [];
 
 const EXCEL_HEADER_MAP = {
+  "No.": "no",
+  "이름": "name",
+  "기수": "cohort",
+  "학번": "studentId",
+  "분과": "department",
+  "분야": "field",
+  "소속": "company",
+  "직위": "position",
+  "사업자번호": "businessNumber",
+  "회원사": "memberType",
   "이름": "name",
   "학번": "studentId",
   "기수": "cohort",
@@ -17,6 +27,8 @@ const EXCEL_HEADER_MAP = {
   "이메일": "email",
   "전화": "phone",
   "팩스": "fax",
+  "회사주소": "companyAddress",
+  "자택주소": "homeAddress",
   "회사명": "company",
   "회사직책": "position",
   "회사주소": "companyAddress",
@@ -137,6 +149,8 @@ memberForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const payload = memberPayload();
   let members = getData("members") || [];
+  const idx = members.findIndex((m) => m.id === payload.id);
+  if (idx >= 0) members[idx] = { ...members[idx], ...payload };
   let members = getData("members");
   const idx = members.findIndex((m) => m.id === payload.id);
   if (idx >= 0) members[idx] = payload;
@@ -187,6 +201,7 @@ memberAdminBody.addEventListener("click", (e) => {
 const excelFileInput = $("excelFileInput");
 const excelPreviewBody = $("excelPreviewBody");
 
+function normalizeExcelRow(raw, rowNumber) {
 function normalizeExcelRow(raw) {
   const row = {};
   Object.entries(raw).forEach(([k, v]) => {
@@ -196,6 +211,38 @@ function normalizeExcelRow(raw) {
 
   const name = row.name || "";
   const studentId = row.studentId || "";
+  if (!name || !studentId) {
+    return { error: `${rowNumber}행: 필수값(이름/학번) 누락` };
+  }
+
+  return {
+    data: {
+      id: newId("m"),
+      name,
+      studentId,
+      cohort: row.cohort || "",
+      department: row.department || "",
+      field: row.field || "",
+      company: row.company || "",
+      position: row.position || "",
+      businessNumber: row.businessNumber || "",
+      memberType: row.memberType || "",
+      birth: row.birth || "",
+      mobile: row.mobile || row.phone || "",
+      phone: row.phone || row.mobile || "",
+      fax: row.fax || "",
+      email: row.email || "",
+      companyAddress: row.companyAddress || "",
+      homeAddress: row.homeAddress || "",
+      homeId: "",
+      team: "",
+      parkingEnabled: "",
+      parkingNumber: "",
+      memo: "",
+      applicationFile: "",
+      introFile: "",
+      photo: safeImageSrc(row.photo) || `/photos/${studentId}.jpg`,
+    },
   if (!name || !studentId) return null;
 
   return {
@@ -267,6 +314,25 @@ function parseExcelFile(file) {
         return;
       }
 
+      const headers = Object.keys(json[0]).map((k) => k?.toString().trim());
+      const requiredHeaders = ["이름", "학번"];
+      const missingHeaders = requiredHeaders.filter((h) => !headers.includes(h));
+      if (missingHeaders.length) {
+        showMessage("excelMessage", `필수 컬럼 누락: ${missingHeaders.join(", ")}. 필요 컬럼: 이름, 기수, 학번, 분과, 분야, 소속, 직위, 사업자번호, 회원사, 생년월일, 휴대전화, 이메일, 전화, 팩스, 회사주소, 자택주소`);
+        return;
+      }
+
+      const errors = [];
+      parsedUploadRows = [];
+      json.forEach((row, idx) => {
+        const result = normalizeExcelRow(row, idx + 2);
+        if (result.error) errors.push(result.error);
+        else parsedUploadRows.push(result.data);
+      });
+
+      renderExcelPreview();
+      const errorText = errors.length ? ` / 실패 ${errors.length}건 (${errors.slice(0, 5).join("; ")}${errors.length > 5 ? " ..." : ""})` : "";
+      showMessage("excelMessage", `파싱 완료: 성공 ${parsedUploadRows.length}건${errorText}`);
       const recognizedCols = Object.keys(json[0]).filter((k) => EXCEL_HEADER_MAP[k?.toString().trim()]);
       if (!recognizedCols.length) {
         showMessage("excelMessage", "컬럼 매핑 실패: 헤더명을 확인해 주세요.");
