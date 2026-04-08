@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원우수첩</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>📒 원우수첩</h1>
+    <a class="admin-link" href="admin.html">관리자 페이지</a>
+  </header>
+
+  <main class="container">
+    <section class="search-box card">
+      <label for="searchInput">이름 검색</label>
+      <input id="searchInput" type="search" placeholder="예: 김민수" autocomplete="off" />
+      <p id="resultCount" class="help-text"></p>
+    </section>
+
+    <section id="memberList" class="member-grid" aria-live="polite"></section>
+  </main>
+</body>
+</html>

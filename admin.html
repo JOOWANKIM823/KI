@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원우수첩 관리자</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="data.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>⚙️ 관리자 페이지</h1>
+    <a class="admin-link" href="index.html">메인으로</a>
+  </header>
+
+  <main class="container admin-layout">
+    <section class="card">
+      <h2 id="formTitle">회원 추가</h2>
+      <form id="memberForm" class="form-grid">
+        <input type="hidden" id="memberId" />
+
+        <label for="name">이름</label>
+        <input id="name" required placeholder="홍길동" />
+
+        <label for="phone">전화번호</label>
+        <input id="phone" required placeholder="010-1234-5678" />
+
+        <label for="email">이메일</label>
+        <input id="email" type="email" required placeholder="example@email.com" />
+
+        <label for="photo">사진 URL</label>
+        <input id="photo" placeholder="https://... 또는 비워두기(자동 연결)" />
+
+        <div class="form-actions">
+          <button type="submit">저장</button>
+          <button type="button" id="resetBtn" class="ghost">초기화</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>회원 목록</h2>
+      <p class="help-text">수정 버튼으로 불러온 뒤 저장하면 수정됩니다.</p>
+      <div id="adminMemberList" class="member-list-compact"></div>
+    </section>
+  </main>
+</body>
+</html>
