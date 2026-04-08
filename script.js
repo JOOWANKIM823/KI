@@ -3,6 +3,9 @@ const bodyEl = document.getElementById("memberTableBody");
 const countEl = document.getElementById("memberCount");
 
 function renderMembers() {
+  const members = getData("members") || [];
+  const q = (searchInput.value || "").trim().toLowerCase();
+  const filtered = members.filter((m) => (m.name || "").toLowerCase().includes(q));
   const members = getData("members");
   const q = (searchInput.value || "").trim().toLowerCase();
   const filtered = members.filter((m) => m.name.toLowerCase().includes(q));
@@ -14,6 +17,16 @@ function renderMembers() {
   }
 
   bodyEl.innerHTML = filtered.map((m) => {
+    const candidates = photoCandidates(m.photo);
+    return `
+      <tr>
+        <td><a href="member.html?id=${m.id}"><img class="photo-mini" src="${candidates[0]}" data-candidates='${JSON.stringify(candidates)}' alt="${m.name || "원우"}"/></a></td>
+        <td><a href="member.html?id=${m.id}" class="name-link">${m.name || ""}</a></td>
+        <td>${m.cohort || ""} / ${m.team || ""} / ${m.position || ""}</td>
+        <td>
+          <a href="tel:${m.phone || m.mobile || ""}">전화</a> |
+          <a href="sms:${m.mobile || m.phone || ""}">문자</a> |
+          <a href="mailto:${m.email || ""}">이메일</a>
     const candidates = photoCandidates(m.name, m.photoUrl);
     return `
       <tr>

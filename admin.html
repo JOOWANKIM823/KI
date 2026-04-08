@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>원우 운영관리 - 관리자</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script defer src="data.js"></script>
   <script defer src="admin.js"></script>
 </head>
@@ -25,11 +26,23 @@
     <section class="tab-panel active" id="tab-members">
       <div class="panel">
         <h2 id="memberFormTitle">회원 추가</h2>
+        <p class="muted">안내: GitHub에 파일 업로드 후 raw URL을 입력하세요.</p>
+        <p id="memberMessage" class="status-msg" role="status" aria-live="polite"></p>
         <form id="memberForm" class="grid-form">
           <input type="hidden" id="memberId" />
           <div class="cols-3">
             <div><label>이름</label><input id="name" required /></div>
             <div><label>홈페이지 ID</label><input id="homeId" required /></div>
+            <div><label>휴대전화</label><input id="mobile" required /></div>
+            <div><label>이메일</label><input id="email" type="email" required /></div>
+            <div><label>사진 URL</label><input id="photo" placeholder="https://raw.githubusercontent.com/..." /></div>
+            <div><label>기수</label><input id="cohort" /></div>
+            <div><label>학번</label><input id="studentId" /></div>
+            <div><label>분과/조</label><input id="department" /></div>
+            <div><label>생년월일</label><input id="birth" type="date" /></div>
+            <div><label>전화</label><input id="phone" required /></div>
+            <div><label>팩스</label><input id="fax" /></div>
+            <div><label>회사명</label><input id="company" /></div>
             <div><label>전화번호</label><input id="phone" required /></div>
             <div><label>이메일</label><input id="email" type="email" required /></div>
             <div><label>사진 URL</label><input id="photoUrl" /></div>
@@ -40,6 +53,15 @@
               <select id="parkingEnabled"><option value="Y">Y</option><option value="N">N</option></select>
             </div>
             <div><label>주차번호</label><input id="parkingNumber" /></div>
+            <div><label>회사주소</label><input id="companyAddress" /></div>
+            <div><label>자택주소</label><input id="homeAddress" /></div>
+            <div><label>입학지원서 URL</label><input id="applicationFile" placeholder="https://raw.githubusercontent.com/..." /></div>
+            <div><label>자기소개서 URL</label><input id="introFile" placeholder="https://raw.githubusercontent.com/..." /></div>
+          </div>
+          <div><label>메모</label><textarea id="memo" rows="2"></textarea></div>
+          <div class="actions-row">
+            <button type="submit" class="primary">회원 저장</button>
+            <button type="button" id="memberResetBtn" class="sub">입력 초기화</button>
             <div><label>입학지원서 URL</label><input id="admissionDocUrl" /></div>
             <div><label>자기소개서 URL</label><input id="introDocUrl" /></div>
           </div>
@@ -52,11 +74,29 @@
       </div>
 
       <div class="panel">
+        <h2>엑셀 업로드</h2>
+        <div class="inline-form">
+          <input id="excelFileInput" type="file" accept=".xlsx,.csv" />
+          <button id="excelParseBtn" type="button">엑셀 업로드</button>
+          <button id="excelAppendBtn" type="button" class="primary">추가</button>
+          <button id="excelOverwriteBtn" type="button" class="sub">전체 덮어쓰기</button>
+        </div>
+        <p id="excelMessage" class="status-msg" role="status" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>이름</th><th>학번</th><th>기수</th><th>조</th><th>직책</th><th>홈페이지ID</th><th>사진</th></tr></thead>
+            <tbody id="excelPreviewBody"><tr><td colspan="7">업로드된 데이터가 없습니다.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
         <h2>회원 목록</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
+                <th>사진</th><th>이름</th><th>ID</th><th>연락처</th><th>기수/조/직책</th><th>주차</th><th>서류</th><th>작업</th>
                 <th>이름</th><th>ID</th><th>연락처</th><th>기수/조/직책</th><th>주차</th><th>서류</th><th>작업</th>
               </tr>
             </thead>
@@ -72,6 +112,7 @@
         <div class="inline-form">
           <label>주차</label><input id="attendanceWeek" type="number" min="1" value="1" />
           <button id="loadAttendanceBtn" type="button">불러오기</button>
+          <button id="saveAttendanceBtn" type="button" class="primary">출석 저장</button>
           <button id="saveAttendanceBtn" type="button">저장</button>
         </div>
         <div class="table-wrap">
@@ -85,11 +126,22 @@
 
     <section class="tab-panel" id="tab-lectures">
       <div class="panel">
+        <h2 id="lectureFormTitle">강사 평가 추가</h2>
+        <p id="lectureMessage" class="status-msg" role="status" aria-live="polite"></p>
         <h2 id="lectureFormTitle">강의평가 추가</h2>
         <form id="lectureForm" class="grid-form">
           <input type="hidden" id="lectureId" />
           <div class="cols-3">
             <div><label>주차</label><input id="lectureWeek" type="number" min="1" required /></div>
+            <div><label>강사명</label><input id="instructor" required /></div>
+            <div><label>강의주제</label><input id="topic" required /></div>
+            <div><label>점수</label><input id="score" type="number" min="1" max="5" required /></div>
+            <div><label>등수</label><input id="rank" type="number" min="1" required /></div>
+          </div>
+          <div><label>코멘트</label><textarea id="comment" rows="2"></textarea></div>
+          <div class="actions-row">
+            <button type="submit" class="primary">평가 저장</button>
+            <button type="button" id="lectureResetBtn" class="sub">입력 초기화</button>
             <div><label>날짜</label><input id="lectureDate" type="date" required /></div>
             <div><label>강사명</label><input id="instructor" required /></div>
             <div><label>강의주제</label><input id="topic" required /></div>
@@ -104,6 +156,7 @@
       </div>
 
       <div class="panel">
+        <h2>강사 평가 순위표</h2>
         <h2>강의평가 목록</h2>
         <div class="inline-form">
           <label>주차 필터</label>
@@ -112,16 +165,23 @@
         </div>
         <div class="table-wrap">
           <table>
+            <thead><tr><th>등수</th><th>강사명</th><th>강의주제</th><th>점수</th><th>작업</th></tr></thead>
             <thead><tr><th>주차</th><th>날짜</th><th>강사명</th><th>강의주제</th><th>점수</th><th>코멘트</th><th>작업</th></tr></thead>
             <tbody id="lectureBody"></tbody>
           </table>
         </div>
+      </div>
+
+      <div class="panel">
+        <h2>강사 코멘트</h2>
+        <div id="lectureComments" class="comment-list"></div>
       </div>
     </section>
 
     <section class="tab-panel" id="tab-expenses">
       <div class="panel">
         <h2 id="expenseFormTitle">지출 추가</h2>
+        <p id="expenseMessage" class="status-msg" role="status" aria-live="polite"></p>
         <form id="expenseForm" class="grid-form">
           <input type="hidden" id="expenseId" />
           <div class="cols-3">
@@ -135,6 +195,8 @@
             <div><label>비고</label><input id="note" /></div>
           </div>
           <div class="actions-row">
+            <button type="submit" class="primary">지출 저장</button>
+            <button type="button" id="expenseResetBtn" class="sub">입력 초기화</button>
             <button type="submit">저장</button>
             <button type="button" id="expenseResetBtn" class="sub">초기화</button>
           </div>
