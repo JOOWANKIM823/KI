@@ -110,6 +110,10 @@ function renderMembersAdmin() {
     <tr>
       <td><img class="photo-mini" src="${imgSrc}" onerror="this.onerror=null;this.src='${DEFAULT_PHOTO}'" alt="${m.name || ""}"/></td>
       <td>${m.name}</td>
+      <td>${m.cohort || ""}</td>
+      <td>${m.position || ""}</td>
+      <td>${m.phone || m.mobile || "-"}</td>
+      <td><a class="btn-link" href="member.html?id=${m.id}">상세 조회</a></td>
       <td>${m.homeId}</td>
       <td>${m.mobile || "-"}<br>${m.email}</td>
       <td>${m.cohort || ""}/${m.team || ""}/${m.position || ""}</td>
