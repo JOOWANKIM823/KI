@@ -3,46 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>원우수첩 관리자</title>
+  <title>원우 운영관리 - 관리자</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="data.js"></script>
   <script defer src="admin.js"></script>
 </head>
 <body>
   <header class="topbar">
-    <h1>⚙️ 관리자 페이지</h1>
-    <a class="admin-link" href="index.html">메인으로</a>
+    <h1>내부 관리자용 원우 운영관리</h1>
+    <a class="btn-link" href="index.html">조회 페이지</a>
   </header>
 
-  <main class="container admin-layout">
-    <section class="card">
-      <h2 id="formTitle">회원 추가</h2>
-      <form id="memberForm" class="form-grid">
-        <input type="hidden" id="memberId" />
+  <main class="page">
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="members">회원관리</button>
+      <button class="tab" data-tab="attendance">출석관리</button>
+      <button class="tab" data-tab="lectures">강의평가</button>
+      <button class="tab" data-tab="expenses">지출관리</button>
+    </nav>
 
-        <label for="name">이름</label>
-        <input id="name" required placeholder="홍길동" />
+    <section class="tab-panel active" id="tab-members">
+      <div class="panel">
+        <h2 id="memberFormTitle">회원 추가</h2>
+        <form id="memberForm" class="grid-form">
+          <input type="hidden" id="memberId" />
+          <div class="cols-3">
+            <div><label>이름</label><input id="name" required /></div>
+            <div><label>홈페이지 ID</label><input id="homeId" required /></div>
+            <div><label>전화번호</label><input id="phone" required /></div>
+            <div><label>이메일</label><input id="email" type="email" required /></div>
+            <div><label>사진 URL</label><input id="photoUrl" /></div>
+            <div><label>기수</label><input id="cohort" /></div>
+            <div><label>조</label><input id="team" /></div>
+            <div><label>직책</label><input id="position" /></div>
+            <div><label>주차여부</label>
+              <select id="parkingEnabled"><option value="Y">Y</option><option value="N">N</option></select>
+            </div>
+            <div><label>주차번호</label><input id="parkingNumber" /></div>
+            <div><label>입학지원서 URL</label><input id="admissionDocUrl" /></div>
+            <div><label>자기소개서 URL</label><input id="introDocUrl" /></div>
+          </div>
+          <div><label>메모</label><textarea id="memo" rows="2"></textarea></div>
+          <div class="actions-row">
+            <button type="submit">저장</button>
+            <button type="button" id="memberResetBtn" class="sub">초기화</button>
+          </div>
+        </form>
+      </div>
 
-        <label for="phone">전화번호</label>
-        <input id="phone" required placeholder="010-1234-5678" />
-
-        <label for="email">이메일</label>
-        <input id="email" type="email" required placeholder="example@email.com" />
-
-        <label for="photo">사진 URL</label>
-        <input id="photo" placeholder="https://... 또는 비워두기(자동 연결)" />
-
-        <div class="form-actions">
-          <button type="submit">저장</button>
-          <button type="button" id="resetBtn" class="ghost">초기화</button>
+      <div class="panel">
+        <h2>회원 목록</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>이름</th><th>ID</th><th>연락처</th><th>기수/조/직책</th><th>주차</th><th>서류</th><th>작업</th>
+              </tr>
+            </thead>
+            <tbody id="memberAdminBody"></tbody>
+          </table>
         </div>
-      </form>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>회원 목록</h2>
-      <p class="help-text">수정 버튼으로 불러온 뒤 저장하면 수정됩니다.</p>
-      <div id="adminMemberList" class="member-list-compact"></div>
+    <section class="tab-panel" id="tab-attendance">
+      <div class="panel">
+        <h2>주차별 출석 입력</h2>
+        <div class="inline-form">
+          <label>주차</label><input id="attendanceWeek" type="number" min="1" value="1" />
+          <button id="loadAttendanceBtn" type="button">불러오기</button>
+          <button id="saveAttendanceBtn" type="button">저장</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>이름</th><th>기수/조</th><th>상태</th><th>누적(출석/결석)</th></tr></thead>
+            <tbody id="attendanceBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-lectures">
+      <div class="panel">
+        <h2 id="lectureFormTitle">강의평가 추가</h2>
+        <form id="lectureForm" class="grid-form">
+          <input type="hidden" id="lectureId" />
+          <div class="cols-3">
+            <div><label>주차</label><input id="lectureWeek" type="number" min="1" required /></div>
+            <div><label>날짜</label><input id="lectureDate" type="date" required /></div>
+            <div><label>강사명</label><input id="instructor" required /></div>
+            <div><label>강의주제</label><input id="topic" required /></div>
+            <div><label>평가점수(1~5)</label><input id="score" type="number" min="1" max="5" required /></div>
+          </div>
+          <div><label>평가코멘트</label><textarea id="comment" rows="2"></textarea></div>
+          <div class="actions-row">
+            <button type="submit">저장</button>
+            <button type="button" id="lectureResetBtn" class="sub">초기화</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>강의평가 목록</h2>
+        <div class="inline-form">
+          <label>주차 필터</label>
+          <input id="lectureWeekFilter" type="number" min="1" placeholder="전체" />
+          <button id="lectureFilterBtn" type="button">조회</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>주차</th><th>날짜</th><th>강사명</th><th>강의주제</th><th>점수</th><th>코멘트</th><th>작업</th></tr></thead>
+            <tbody id="lectureBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-expenses">
+      <div class="panel">
+        <h2 id="expenseFormTitle">지출 추가</h2>
+        <form id="expenseForm" class="grid-form">
+          <input type="hidden" id="expenseId" />
+          <div class="cols-3">
+            <div><label>대분류 항목</label><input id="categoryMain" required /></div>
+            <div><label>세부항목</label><input id="categorySub" required /></div>
+            <div><label>지출월(YYYY-MM)</label><input id="expenseMonth" placeholder="2026-04" required /></div>
+            <div><label>지출날짜</label><input id="expenseDate" type="date" required /></div>
+            <div><label>적요</label><input id="description" required /></div>
+            <div><label>지출금액</label><input id="amount" type="number" min="0" required /></div>
+            <div><label>지출방법</label><input id="method" required /></div>
+            <div><label>비고</label><input id="note" /></div>
+          </div>
+          <div class="actions-row">
+            <button type="submit">저장</button>
+            <button type="button" id="expenseResetBtn" class="sub">초기화</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>지출 목록/합계</h2>
+        <div id="expenseSummary" class="summary-box"></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>대분류</th><th>세부</th><th>월</th><th>일자</th><th>적요</th><th>금액</th><th>방법</th><th>비고</th><th>작업</th></tr></thead>
+            <tbody id="expenseBody"></tbody>
+          </table>
+        </div>
+      </div>
     </section>
   </main>
 </body>

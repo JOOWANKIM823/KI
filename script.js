@@ -1,64 +1,43 @@
 const searchInput = document.getElementById("searchInput");
-const memberList = document.getElementById("memberList");
-const resultCount = document.getElementById("resultCount");
+const bodyEl = document.getElementById("memberTableBody");
+const countEl = document.getElementById("memberCount");
 
-function renderMembers(keyword = "") {
-  const members = getMembers();
-  const q = keyword.trim().toLowerCase();
+function renderMembers() {
+  const members = getData("members");
+  const q = (searchInput.value || "").trim().toLowerCase();
   const filtered = members.filter((m) => m.name.toLowerCase().includes(q));
+  countEl.textContent = `총 ${filtered.length}명`;
 
-  resultCount.textContent = `총 ${filtered.length}명`;
-
-  if (filtered.length === 0) {
-    memberList.innerHTML = `<p class="help-text">검색 결과가 없습니다.</p>`;
+  if (!filtered.length) {
+    bodyEl.innerHTML = `<tr><td colspan="4">검색 결과가 없습니다.</td></tr>`;
     return;
   }
 
-  memberList.innerHTML = filtered
-    .map(
-      (m) => `
-      <article class="member-card">
-        <div class="member-top">
-          <img class="member-photo" src="${getPhotoCandidates(m)[0]}" data-fallback='${JSON.stringify(
-        getPhotoCandidates(m)
-      )}' alt="${m.name} 사진" loading="lazy">
-          <div>
-            <h3 class="member-name">${m.name}</h3>
-            <p class="member-info">${m.phone}</p>
-            <p class="member-info">${m.email}</p>
-          </div>
-        </div>
+  bodyEl.innerHTML = filtered.map((m) => {
+    const candidates = photoCandidates(m.name, m.photoUrl);
+    return `
+      <tr>
+        <td><img class="photo-mini" src="${candidates[0]}" data-candidates='${JSON.stringify(candidates)}' alt="${m.name}"/></td>
+        <td>${m.name}</td>
+        <td>${m.cohort || ""} / ${m.team || ""} / ${m.position || ""}</td>
+        <td>
+          <a href="tel:${m.phone}">전화</a> |
+          <a href="sms:${m.phone}">문자</a> |
+          <a href="mailto:${m.email}">이메일</a>
+        </td>
+      </tr>`;
+  }).join("");
 
-        <div class="actions">
-          <a class="action-link" href="tel:${m.phone}">전화</a>
-          <a class="action-link" href="sms:${m.phone}">문자</a>
-          <a class="action-link" href="mailto:${m.email}">이메일</a>
-        </div>
-      </article>
-    `
-    )
-    .join("");
-
-  setupPhotoFallbacks();
-}
-
-function setupPhotoFallbacks() {
-  document.querySelectorAll("img[data-fallback]").forEach((img) => {
-    const candidates = JSON.parse(img.dataset.fallback || "[]");
+  document.querySelectorAll("img[data-candidates]").forEach((img) => {
+    const list = JSON.parse(img.dataset.candidates || "[]");
     let idx = 0;
     img.onerror = () => {
       idx += 1;
-      if (idx < candidates.length) {
-        img.src = candidates[idx];
-      }
+      if (idx < list.length) img.src = list[idx];
     };
   });
 }
 
-searchInput.addEventListener("input", (e) => {
-  renderMembers(e.target.value);
-});
-
-window.addEventListener("storage", () => renderMembers(searchInput.value));
-
+searchInput.addEventListener("input", renderMembers);
+window.addEventListener("storage", renderMembers);
 renderMembers();
