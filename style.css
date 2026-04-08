@@ -75,6 +75,16 @@ thead th { background: #f8fafc; white-space: nowrap; }
 .row-actions { display: flex; gap: 6px; flex-wrap: wrap; }
 .edit { background: #fef9c3; font-weight: 600; }
 .del { background: #fee2e2; color: var(--danger); font-weight: 600; }
+.actions-row { display: flex; gap: 8px; }
+.table-wrap { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 920px; }
+th, td { border: 1px solid var(--line); padding: 7px; text-align: left; vertical-align: top; }
+thead th { background: #f8fafc; }
+.muted { color: var(--muted); margin: 6px 0 0; }
+.photo-mini { width: 46px; height: 46px; border-radius: 6px; object-fit: cover; border: 1px solid var(--line); }
+.row-actions { display: flex; gap: 6px; }
+.edit { background: #fef9c3; }
+.del { background: #fee2e2; color: var(--danger); }
 .summary-box { display: grid; gap: 6px; margin-bottom: 10px; font-size: .92rem; }
 @media (max-width: 900px) {
   .cols-3 { grid-template-columns: 1fr; }
@@ -109,3 +119,4 @@ thead th { background: #f8fafc; white-space: nowrap; }
 .comment-list { display: grid; gap: 10px; }
 .comment-item { border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: #fff; }
 .comment-item p { margin: 6px 0 0; white-space: pre-wrap; }
+}
