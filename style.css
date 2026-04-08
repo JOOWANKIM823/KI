@@ -105,3 +105,7 @@ thead th { background: #f8fafc; white-space: nowrap; }
   .profile-photo { width: 120px; height: 120px; }
   .profile-table th { width: 150px; }
 }
+
+.comment-list { display: grid; gap: 10px; }
+.comment-item { border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: #fff; }
+.comment-item p { margin: 6px 0 0; white-space: pre-wrap; }

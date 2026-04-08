@@ -330,27 +330,96 @@ $("saveAttendanceBtn").addEventListener("click", () => {
   alert("출석 저장 완료");
 });
 
-// 강의평가
+// 강의평가 (요약형)
 const lectureForm = $("lectureForm");
 const lectureBody = $("lectureBody");
-function resetLectureForm() { lectureForm.reset(); $("lectureId").value = ""; $("lectureFormTitle").textContent = "강의평가 추가"; }
-function lecturePayload() { return { id: $("lectureId").value || newId("lec"), week: Number($("lectureWeek").value), date: $("lectureDate").value, instructor: $("instructor").value.trim(), topic: $("topic").value.trim(), score: Number($("score").value), comment: $("comment").value.trim() }; }
-function renderLectures() {
+const lectureComments = $("lectureComments");
+
+function resetLectureForm() {
+  lectureForm.reset();
+  $("lectureId").value = "";
+  $("lectureFormTitle").textContent = "강사 평가 추가";
+}
+
+function lecturePayload() {
+  return {
+    id: $("lectureId").value || newId("lec"),
+    week: Number($("lectureWeek").value),
+    instructor: $("instructor").value.trim(),
+    topic: $("topic").value.trim(),
+    score: Number($("score").value),
+    rank: Number($("rank").value),
+    comment: $("comment").value.trim(),
+  };
+}
+
+function getFilteredLectures() {
   const filterWeek = $("lectureWeekFilter").value.trim();
   let rows = getData("lectureEvaluations") || [];
   if (filterWeek) rows = rows.filter((r) => String(r.week) === filterWeek);
-  rows.sort((a, b) => (a.week - b.week) || a.date.localeCompare(b.date));
-  lectureBody.innerHTML = rows.map((r) => `<tr><td>${r.week}</td><td>${r.date}</td><td>${r.instructor}</td><td>${r.topic}</td><td>${r.score}</td><td>${r.comment || ""}</td><td class="row-actions"><button class="edit" type="button" data-edit-lecture="${r.id}">수정</button><button class="del" type="button" data-del-lecture="${r.id}">삭제</button></td></tr>`).join("") || `<tr><td colspan="7">강의평가 데이터가 없습니다.</td></tr>`;
+  rows.sort((a, b) => (b.score - a.score) || (a.rank - b.rank) || a.instructor.localeCompare(b.instructor));
+  return rows;
 }
-lectureForm.addEventListener("submit", (e) => { e.preventDefault(); const payload = lecturePayload(); let rows = getData("lectureEvaluations") || []; const idx = rows.findIndex((r) => r.id === payload.id); if (idx >= 0) rows[idx] = payload; else rows = [payload, ...rows]; setData("lectureEvaluations", rows); resetLectureForm(); renderLectures(); showMessage("lectureMessage", "강의평가가 저장되었습니다."); });
+
+function renderLectures() {
+  const rows = getFilteredLectures();
+
+  lectureBody.innerHTML = rows.map((r, idx) => {
+    const ranking = r.rank || (idx + 1);
+    return `<tr>
+      <td>${ranking}</td>
+      <td>${r.instructor}</td>
+      <td>${r.topic}</td>
+      <td>${r.score}</td>
+      <td class="row-actions"><button class="edit" type="button" data-edit-lecture="${r.id}">수정</button><button class="del" type="button" data-del-lecture="${r.id}">삭제</button></td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="5">강의평가 데이터가 없습니다.</td></tr>`;
+
+  lectureComments.innerHTML = rows
+    .map((r) => `<div class="comment-item"><strong>[${r.week}주차] ${r.instructor} - ${r.topic}</strong><p>${r.comment || "코멘트 없음"}</p></div>`)
+    .join("") || `<p class="muted">표시할 코멘트가 없습니다.</p>`;
+}
+
+lectureForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const payload = lecturePayload();
+  let rows = getData("lectureEvaluations") || [];
+  const idx = rows.findIndex((r) => r.id === payload.id);
+  if (idx >= 0) rows[idx] = payload;
+  else rows = [payload, ...rows];
+  setData("lectureEvaluations", rows);
+  resetLectureForm();
+  renderLectures();
+  showMessage("lectureMessage", "강사 평가가 저장되었습니다.");
+});
+
 $("lectureResetBtn").addEventListener("click", resetLectureForm);
 $("lectureFilterBtn").addEventListener("click", renderLectures);
+
 lectureBody.addEventListener("click", (e) => {
   const rows = getData("lectureEvaluations") || [];
   const editId = e.target.dataset.editLecture;
   const delId = e.target.dataset.delLecture;
-  if (editId) { const r = rows.find((x) => x.id === editId); if (!r) return; $("lectureId").value = r.id; $("lectureWeek").value = r.week; $("lectureDate").value = r.date; $("instructor").value = r.instructor; $("topic").value = r.topic; $("score").value = r.score; $("comment").value = r.comment || ""; $("lectureFormTitle").textContent = "강의평가 수정"; }
-  if (delId) { if (!window.confirm("해당 강의평가를 삭제하시겠습니까?")) return; setData("lectureEvaluations", rows.filter((x) => x.id !== delId)); renderLectures(); showMessage("lectureMessage", "강의평가가 삭제되었습니다."); }
+
+  if (editId) {
+    const r = rows.find((x) => x.id === editId);
+    if (!r) return;
+    $("lectureId").value = r.id;
+    $("lectureWeek").value = r.week;
+    $("instructor").value = r.instructor;
+    $("topic").value = r.topic;
+    $("score").value = r.score;
+    $("rank").value = r.rank || "";
+    $("comment").value = r.comment || "";
+    $("lectureFormTitle").textContent = "강사 평가 수정";
+  }
+
+  if (delId) {
+    if (!window.confirm("해당 강사 평가를 삭제하시겠습니까?")) return;
+    setData("lectureEvaluations", rows.filter((x) => x.id !== delId));
+    renderLectures();
+    showMessage("lectureMessage", "강사 평가가 삭제되었습니다.");
+  }
 });
 
 // 지출관리

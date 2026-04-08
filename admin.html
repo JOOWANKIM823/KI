@@ -113,18 +113,18 @@
 
     <section class="tab-panel" id="tab-lectures">
       <div class="panel">
-        <h2 id="lectureFormTitle">강의평가 추가</h2>
+        <h2 id="lectureFormTitle">강사 평가 추가</h2>
         <p id="lectureMessage" class="status-msg" role="status" aria-live="polite"></p>
         <form id="lectureForm" class="grid-form">
           <input type="hidden" id="lectureId" />
           <div class="cols-3">
             <div><label>주차</label><input id="lectureWeek" type="number" min="1" required /></div>
-            <div><label>날짜</label><input id="lectureDate" type="date" required /></div>
             <div><label>강사명</label><input id="instructor" required /></div>
             <div><label>강의주제</label><input id="topic" required /></div>
-            <div><label>평가점수(1~5)</label><input id="score" type="number" min="1" max="5" required /></div>
+            <div><label>점수</label><input id="score" type="number" min="1" max="5" required /></div>
+            <div><label>등수</label><input id="rank" type="number" min="1" required /></div>
           </div>
-          <div><label>평가코멘트</label><textarea id="comment" rows="2"></textarea></div>
+          <div><label>코멘트</label><textarea id="comment" rows="2"></textarea></div>
           <div class="actions-row">
             <button type="submit" class="primary">평가 저장</button>
             <button type="button" id="lectureResetBtn" class="sub">입력 초기화</button>
@@ -133,7 +133,7 @@
       </div>
 
       <div class="panel">
-        <h2>강의평가 목록</h2>
+        <h2>강사 평가 순위표</h2>
         <div class="inline-form">
           <label>주차 필터</label>
           <input id="lectureWeekFilter" type="number" min="1" placeholder="전체" />
@@ -141,10 +141,15 @@
         </div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>주차</th><th>날짜</th><th>강사명</th><th>강의주제</th><th>점수</th><th>코멘트</th><th>작업</th></tr></thead>
+            <thead><tr><th>등수</th><th>강사명</th><th>강의주제</th><th>점수</th><th>작업</th></tr></thead>
             <tbody id="lectureBody"></tbody>
           </table>
         </div>
+      </div>
+
+      <div class="panel">
+        <h2>강사 코멘트</h2>
+        <div id="lectureComments" class="comment-list"></div>
       </div>
     </section>
 
