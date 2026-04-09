@@ -1,5 +1,9 @@
 /**
  * KODA-ARP 관리자 전용 백오피스 앱
+ * - members.json 기반 렌더링
+ * - 검색/필터/정렬 동시 동작
+ * - 상세 패널(사진 + 기본정보 + PDF 버튼)
+ * - 추가/수정/삭제(브라우저 로컬스토리지 오버레이 저장)
  * - members.json 데이터를 기반으로 카드형 UI를 렌더링
  * - 검색/필터/정렬/상세패널/추가/수정/삭제 제공
  * - 파일 저장은 불가하므로 로컬스토리지 오버레이 방식을 사용
@@ -8,6 +12,8 @@
 const DATA_URL = "data/members.json";
 const PHOTO_DIR = "photos";
 const PDF_DIR = "pdfs";
+const STORAGE_KEY = "arp-members";
+
 const PLACEHOLDER_IMAGE =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
@@ -83,6 +89,9 @@ function bindEvents() {
   });
 
   el.closeDetailBtn.addEventListener("click", closeDetailPanel);
+  el.addMemberBtn.addEventListener("click", () => openForm());
+  el.closeFormBtn.addEventListener("click", closeForm);
+  el.cancelFormBtn.addEventListener("click", closeForm);
 
   el.addMemberBtn.addEventListener("click", () => openForm());
   el.closeFormBtn.addEventListener("click", closeForm);
@@ -98,6 +107,8 @@ function buildFormFields() {
   FIELD_META.forEach(([key, label]) => {
     const group = document.createElement("div");
     group.className = `form-group ${fullWidthFields.has(key) ? "full" : ""}`;
+    const id = `field-${key}`;
+
 
     const id = `field-${key}`;
     group.innerHTML = `
@@ -105,6 +116,15 @@ function buildFormFields() {
       <input id="${id}" name="${key}" type="text" />
     `;
 
+    const input = group.querySelector("input");
+    if (key === "no") {
+      input.type = "number";
+      input.min = "1";
+      input.step = "1";
+    }
+    if (key === "birthDate") {
+      input.placeholder = "YYYY-MM-DD";
+      input.pattern = "\\d{4}-\\d{2}-\\d{2}";
     if (key === "no") {
       group.querySelector("input").type = "number";
       group.querySelector("input").min = "1";
@@ -115,6 +135,72 @@ function buildFormFields() {
 }
 
 async function loadMembers() {
+  let jsonData = [];
+
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    jsonData = await response.json();
+  } catch (error) {
+    console.error("members.json 로드 실패:", error);
+    jsonData = [];
+  }
+
+  const localData = parseJsonSafe(localStorage.getItem(STORAGE_KEY));
+  const source = Array.isArray(localData) ? localData : jsonData;
+  state.members = normalizeMembers(source);
+}
+
+function parseJsonSafe(raw) {
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function normalizeMembers(rows) {
+  if (!Array.isArray(rows)) return [];
+
+  return rows
+    .map((row) => normalizeMember(row))
+    .filter((m) => m.studentId && m.name);
+}
+
+function normalizeMember(row = {}) {
+  const output = {};
+
+  FIELD_META.forEach(([key]) => {
+    output[key] = row[key] == null ? "" : String(row[key]).trim();
+  });
+
+  output.no = normalizeNumberString(output.no);
+  output.studentId = String(output.studentId || "").trim();
+  output.birthDate = normalizeBirthDate(output.birthDate);
+
+  if (!output.memberType) output.memberType = "비회원";
+  return output;
+}
+
+function normalizeNumberString(value) {
+  const asNum = Number(value);
+  if (!Number.isFinite(asNum) || asNum < 1) return "";
+  return String(Math.trunc(asNum));
+}
+
+function normalizeBirthDate(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+
+  // YYYYMMDD 또는 YYYY-MM-DD를 YYYY-MM-DD로 통일
+  if (/^\d{8}$/.test(text)) {
+    return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
+  }
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    return text;
+  }
+  return "";
   try {
     const response = await fetch(DATA_URL);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -159,6 +245,7 @@ function applyFilters() {
   const cohort = el.cohortFilter.value;
   const division = el.divisionFilter.value;
   const memberType = el.memberTypeFilter.value;
+  const sortBy = el.sortBy.value || "studentId";
   const sortBy = el.sortBy.value;
 
   const result = state.members
@@ -170,6 +257,12 @@ function applyFilters() {
           .join(" ")
           .toLowerCase()
           .includes(keyword);
+
+      const matchesCohort = !cohort || m.cohort === cohort;
+      const matchesDivision = !division || m.division === division;
+      const isRegularMember = m.memberType === "정회원";
+      const normalizedType = isRegularMember ? "회원사" : "비회원사";
+      const matchesType = !memberType || memberType === normalizedType;
 
       const matchesCohort = !cohort || String(m.cohort) === cohort;
       const matchesDivision = !division || m.division === division;
@@ -186,11 +279,18 @@ function applyFilters() {
   state.filtered = result;
   renderStats();
   renderMemberGrid();
+
+  // 필터로 선택된 카드가 사라졌으면 상세 패널 닫기
+  if (state.selectedId && !state.filtered.some((m) => m.studentId === state.selectedId)) {
+    closeDetailPanel();
+  }
 }
 
 function renderStats() {
   const total = state.members.length;
   const byDivision = state.members.reduce((acc, m) => {
+    const key = m.division || "미분류";
+    acc[key] = (acc[key] || 0) + 1;
     acc[m.division] = (acc[m.division] || 0) + 1;
     return acc;
   }, {});
@@ -198,6 +298,11 @@ function renderStats() {
     .map(([key, val]) => `${key} ${val}`)
     .join(" / ");
 
+  // 요구사항: memberType이 "정회원"인 경우만 회원사 인원으로 집계
+  const memberCompanyCount = state.members.filter((m) => m.memberType === "정회원").length;
+
+  el.totalCount.textContent = String(total);
+  el.divisionCount.textContent = total ? divisionText : "-";
   const memberCompanyCount = state.members.filter((m) => m.memberType === "회원사").length;
 
   el.totalCount.textContent = String(total);
@@ -210,6 +315,7 @@ function renderMemberGrid() {
   el.memberGrid.innerHTML = "";
 
   if (!state.filtered.length) {
+    el.memberGrid.innerHTML = `<div class="empty-state">등록된 데이터가 없거나, 검색/필터 조건에 맞는 원우가 없습니다.</div>`;
     el.memberGrid.innerHTML = `<div class="empty-state">검색/필터 조건에 맞는 원우가 없습니다.</div>`;
     closeDetailPanel();
     return;
@@ -222,6 +328,7 @@ function renderMemberGrid() {
     node.dataset.studentId = member.studentId;
 
     const photo = node.querySelector(".member-photo");
+    photo.src = memberPhotoPath(member.studentId);
     photo.src = `${PHOTO_DIR}/${member.studentId}.jpg`;
     photo.alt = `${member.name} 사진`;
     photo.addEventListener("error", () => {
@@ -249,6 +356,13 @@ function renderMemberGrid() {
   el.memberGrid.appendChild(frag);
 }
 
+function memberPhotoPath(studentId) {
+  // 사진 규칙: photos/{학번}.jpg
+  return `${PHOTO_DIR}/${String(studentId)}.jpg`;
+}
+
+function selectMember(studentId) {
+  state.selectedId = String(studentId || "");
 function selectMember(studentId) {
   state.selectedId = studentId;
   renderMemberGrid();
@@ -259,11 +373,16 @@ function closeDetailPanel() {
   state.selectedId = null;
   el.detailPanel.classList.remove("open");
   el.detailPanel.setAttribute("aria-hidden", "true");
+  el.detailBody.innerHTML = "";
   renderMemberGrid();
 }
 
 async function renderDetailPanel() {
   const member = state.members.find((m) => m.studentId === state.selectedId);
+  if (!member) {
+    closeDetailPanel();
+    return;
+  }
   if (!member) return;
 
   const rows = FIELD_META.map(
@@ -281,16 +400,58 @@ async function renderDetailPanel() {
     checkFileExists(introPath),
   ]);
 
+  const basicInfoRows = [
+    ["이름", member.name],
+    ["학번", member.studentId],
+    ["기수", member.cohort],
+    ["분과", member.division],
+    ["분야", member.field],
+    ["소속", member.company],
+    ["직위", member.title],
+  ]
+    .map(
+      ([label, value]) => `
+      <div class="detail-label">${label}</div>
+      <div class="detail-value">${value || "-"}</div>
+    `
+    )
+    .join("");
+
+  el.detailBody.innerHTML = `
+    <div class="detail-profile">
+      <img src="${memberPhotoPath(member.studentId)}" alt="${member.name} 사진" id="detailPhoto" class="detail-photo" />
+      <div class="detail-profile-main">
+        <h3>${member.name || "-"}</h3>
+        <p>${member.studentId || "-"} / ${member.cohort || "-"}</p>
+      </div>
+    </div>
+
+    <div class="detail-table">${basicInfoRows}</div>
+
   el.detailBody.innerHTML = `
     <div class="detail-table">${rows}</div>
     <div class="pdf-actions">
       ${pdfButtonMarkup("입학지원서 보기", admissionPath, hasAdmission)}
       ${pdfButtonMarkup("자기소개서 보기", introPath, hasIntro)}
     </div>
+
+    <hr class="detail-sep" />
+
+    <div class="detail-table">
+      ${buildFullDetailRows(member)}
+    </div>
+
     <div class="pdf-actions">
       <button class="btn btn-primary" id="editMemberBtn">수정</button>
     </div>
   `;
+
+  const detailPhoto = document.getElementById("detailPhoto");
+  if (detailPhoto) {
+    detailPhoto.addEventListener("error", () => {
+      detailPhoto.src = PLACEHOLDER_IMAGE;
+    });
+  }
 
   const editBtn = document.getElementById("editMemberBtn");
   if (editBtn) editBtn.addEventListener("click", () => openForm(member.studentId));
@@ -299,6 +460,17 @@ async function renderDetailPanel() {
   el.detailPanel.setAttribute("aria-hidden", "false");
 }
 
+function buildFullDetailRows(member) {
+  return FIELD_META.map(
+    ([key, label]) => `
+      <div class="detail-label">${label}</div>
+      <div class="detail-value">${member[key] || "-"}</div>
+    `
+  ).join("");
+}
+
+function pdfButtonMarkup(label, path, exists) {
+  if (!exists) return `<button class="btn btn-ghost" disabled>${label} (파일 없음)</button>`;
 function pdfButtonMarkup(label, path, exists) {
   if (!exists) {
     return `<button class="btn btn-ghost" disabled>${label} (파일 없음)</button>`;
@@ -324,6 +496,7 @@ function openForm(studentId = null) {
 
   FIELD_META.forEach(([key]) => {
     const input = el.memberForm.elements.namedItem(key);
+    if (input) input.value = editing?.[key] ?? "";
     input.value = editing?.[key] ?? "";
   });
 
@@ -339,12 +512,29 @@ function onFormSubmit(event) {
   event.preventDefault();
 
   const payload = FIELD_META.reduce((acc, [key]) => {
+    const field = el.memberForm.elements.namedItem(key);
+    acc[key] = field ? String(field.value || "").trim() : "";
+    return acc;
+  }, {});
+
+  payload.studentId = String(payload.studentId || "").trim();
+  payload.no = normalizeNumberString(payload.no);
+  payload.birthDate = normalizeBirthDate(payload.birthDate);
+
     acc[key] = String(el.memberForm.elements.namedItem(key).value || "").trim();
     return acc;
   }, {});
 
   if (!payload.studentId) {
     alert("학번은 필수입니다.");
+    return;
+  }
+  if (!payload.name) {
+    alert("이름은 필수입니다.");
+    return;
+  }
+  if (payload.birthDate === "" && el.memberForm.elements.namedItem("birthDate").value.trim()) {
+    alert("생년월일은 YYYY-MM-DD 형식으로 입력해 주세요.");
     return;
   }
 
@@ -359,6 +549,9 @@ function onFormSubmit(event) {
       return;
     }
     state.members.push(payload);
+  }
+
+  state.selectedId = payload.studentId;
     state.selectedId = payload.studentId;
   }
 
@@ -371,6 +564,11 @@ function onFormSubmit(event) {
 
 function onDeleteMember() {
   if (!state.editingId) return;
+  if (!confirm("정말 삭제하시겠습니까?")) return;
+
+  state.members = state.members.filter((m) => m.studentId !== state.editingId);
+  state.selectedId = null;
+
   const willDelete = confirm("정말 삭제하시겠습니까?");
   if (!willDelete) return;
 
@@ -384,5 +582,6 @@ function onDeleteMember() {
 }
 
 function persistMembers() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.members));
   localStorage.setItem("arp-members", JSON.stringify(state.members));
 }

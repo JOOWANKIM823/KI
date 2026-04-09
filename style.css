@@ -141,6 +141,84 @@ h2 {
   gap: 12px;
 }
 
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(8, 18, 37, 0.45), rgba(11, 27, 51, 0.65));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 3.6rem);
+  font-weight: 800;
+}
+
+.hero-caption {
+  margin-top: 18px;
+  font-size: clamp(0.95rem, 2vw, 1.8rem);
+  opacity: 0.95;
+}
+
+.main-content {
+  padding: 32px 0 80px;
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--navy-strong);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.stat-card p {
+  margin: 10px 0 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.management {
+  margin-top: 28px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
 .toolbar {
   margin-top: 14px;
   display: grid;
@@ -209,6 +287,13 @@ select {
   box-shadow: 0 16px 34px rgba(12, 31, 61, 0.2);
 }
 
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(12, 31, 61, 0.2);
+}
+
 .member-card.selected {
   border-color: var(--blue);
   box-shadow: 0 0 0 2px rgba(27, 78, 155, 0.2);
@@ -266,6 +351,39 @@ select {
   overflow-y: auto;
 }
 
+
+.detail-profile {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.detail-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #eef2f7;
+  border: 1px solid var(--border);
+}
+
+.detail-profile-main h3 {
+  margin: 0 0 6px;
+  color: var(--navy-strong);
+}
+
+.detail-profile-main p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.detail-sep {
+  margin: 18px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
 .detail-table {
   display: grid;
   grid-template-columns: 110px 1fr;
