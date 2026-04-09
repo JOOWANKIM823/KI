@@ -1,46 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>원우 운영관리 - 조회</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="data.js"></script>
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="topbar">
-    <h1>원우 조회</h1>
-    <a class="btn-link" href="admin.html">관리자 페이지 이동</a>
-  </header>
-
-  <main class="page">
-    <section class="panel">
-      <h2>원우 검색</h2>
-      <div class="form-row">
-        <label for="searchInput">이름</label>
-        <input id="searchInput" type="search" placeholder="이름으로 검색" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KODA-ARP 관리자 백오피스</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-bar container">
+        <img src="assets/logo.png" alt="KODA-ARP 로고" class="logo" />
+        <div class="admin-badge" aria-label="관리자 전용">ADMIN BACKOFFICE</div>
       </div>
-      <p id="memberCount" class="muted"></p>
-    </section>
 
-    <section class="panel">
-      <h2>원우 목록 (이름/사진 클릭 시 상세 이동)</h2>
-      <h2>원우 목록</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>사진</th>
-              <th>이름</th>
-              <th>기수/조/직책</th>
-              <th>연락</th>
-            </tr>
-          </thead>
-          <tbody id="memberTableBody"></tbody>
-        </table>
+      <section class="hero" role="banner" aria-label="ARP 배너">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <p class="hero-subtitle">한국디벨로퍼협회</p>
+          <h1>창조도시부동산융합 최고위과정(ARP)</h1>
+          <p class="hero-caption">Advanced creative city-Real estate convergence Program</p>
+        </div>
+      </section>
+    </header>
+
+    <main class="container main-content">
+      <section class="dashboard" aria-label="관리자 대시보드">
+        <h2>관리자 대시보드</h2>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <h3>총 원우 수</h3>
+            <p id="totalCount">0</p>
+          </article>
+          <article class="stat-card">
+            <h3>분과별 인원 수</h3>
+            <p id="divisionCount">-</p>
+          </article>
+          <article class="stat-card">
+            <h3>회원사 인원 수</h3>
+            <p id="memberCompanyCount">0</p>
+          </article>
+          <article class="stat-card">
+            <h3>현재 필터 결과 수</h3>
+            <p id="filteredCount">0</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="management" aria-label="원우 관리 영역">
+        <div class="section-head">
+          <h2>원우 관리</h2>
+          <button id="addMemberBtn" class="btn btn-primary">신규 원우 추가</button>
+        </div>
+
+        <div class="toolbar" aria-label="검색 및 필터">
+          <input type="search" id="searchInput" placeholder="이름, 학번, 소속, 직위 검색" />
+
+          <select id="cohortFilter">
+            <option value="">전체 기수</option>
+          </select>
+
+          <select id="divisionFilter">
+            <option value="">전체 분과</option>
+          </select>
+
+          <select id="memberTypeFilter">
+            <option value="">회원사 전체</option>
+            <option value="회원사">회원사</option>
+            <option value="비회원사">비회원사</option>
+          </select>
+
+          <select id="sortBy">
+            <option value="studentId">학번순</option>
+            <option value="name">이름순</option>
+          </select>
+        </div>
+
+        <div id="memberGrid" class="member-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside id="detailPanel" class="detail-panel" aria-hidden="true">
+      <div class="detail-header">
+        <h2>원우 상세정보</h2>
+        <button id="closeDetailBtn" class="icon-btn" aria-label="닫기">✕</button>
       </div>
-    </section>
-  </main>
-</body>
+      <div id="detailBody" class="detail-body"></div>
+    </aside>
+
+    <dialog id="memberFormDialog" class="form-dialog">
+      <form id="memberForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="formTitle">신규 원우 추가</h2>
+          <button type="button" id="cancelFormBtn" class="icon-btn" aria-label="닫기">✕</button>
+        </div>
+
+        <div class="form-grid" id="formGrid"></div>
+
+        <div class="form-actions">
+          <button type="button" id="deleteMemberBtn" class="btn btn-danger hidden">삭제</button>
+          <div class="form-actions-right">
+            <button type="button" id="closeFormBtn" class="btn btn-ghost">취소</button>
+            <button type="submit" class="btn btn-primary">저장</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <template id="memberCardTemplate">
+      <article class="member-card" tabindex="0">
+        <img class="member-photo" alt="원우 사진" />
+        <div class="member-content">
+          <h3 class="member-name"></h3>
+          <p class="member-meta student-id"></p>
+          <p class="member-meta company"></p>
+          <p class="member-meta title"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
