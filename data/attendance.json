@@ -1,0 +1,4142 @@
+[
+  {
+    "no": 1,
+    "studentId": "26001",
+    "name": "김구현",
+    "company": "케이알산업",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 2,
+    "studentId": "26002",
+    "name": "김기현",
+    "company": "코람코자산신탁",
+    "title": "이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 3,
+    "studentId": "26003",
+    "name": "김선철",
+    "company": "㈜나산종합건축사사무소",
+    "title": "사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 4,
+    "studentId": "26004",
+    "name": "김세훈",
+    "company": "㈜케이에스에이치파트너스",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "결석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 5,
+    "studentId": "26005",
+    "name": "김승진",
+    "company": "미래에셋증권",
+    "title": "이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 6,
+    "studentId": "26006",
+    "name": "김시찬",
+    "company": "성원엔지니어링",
+    "title": "부사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 7,
+    "studentId": "26007",
+    "name": "김영미",
+    "company": "수협은행",
+    "title": "지점장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 8,
+    "studentId": "26008",
+    "name": "김영철",
+    "company": "바인그룹 (동화세상에듀코)",
+    "title": "회장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 9,
+    "studentId": "26009",
+    "name": "김인식",
+    "company": "한국투자부동산신탁",
+    "title": "상무보",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 10,
+    "studentId": "26010",
+    "name": "김재구",
+    "company": "데이터노우즈",
+    "title": "사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 11,
+    "studentId": "26011",
+    "name": "김재만",
+    "company": "㈜에스피에스테크",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 12,
+    "studentId": "26012",
+    "name": "김진학",
+    "company": "율림건설㈜",
+    "title": "전무이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 13,
+    "studentId": "26013",
+    "name": "김태윤",
+    "company": "㈜아이엔에스시스템",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 14,
+    "studentId": "26014",
+    "name": "김태형",
+    "company": "GS건설",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "결석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 15,
+    "studentId": "26015",
+    "name": "김태훈",
+    "company": "우암건설 주식회사",
+    "title": "사업본부장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 16,
+    "studentId": "26016",
+    "name": "김평",
+    "company": "주식회사 신안디앤씨",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 17,
+    "studentId": "26017",
+    "name": "김학성",
+    "company": "㈜성현이앤씨",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 18,
+    "studentId": "26018",
+    "name": "남은오",
+    "company": "㈜태정종합건설",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 19,
+    "studentId": "26019",
+    "name": "노거희",
+    "company": "주식회사 마리디앤씨",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "결석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "결석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 20,
+    "studentId": "26020",
+    "name": "노원수",
+    "company": "㈜에이치엠",
+    "title": "전무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 21,
+    "studentId": "26021",
+    "name": "도종광",
+    "company": "한국인프라컨설팅",
+    "title": "부문대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 22,
+    "studentId": "26022",
+    "name": "류권",
+    "company": "주식회사 대유건설",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 23,
+    "studentId": "26023",
+    "name": "맹성호",
+    "company": "에이앤유디자인그룹 건축사사무소㈜",
+    "title": "부사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 24,
+    "studentId": "26024",
+    "name": "박명식",
+    "company": "테마종합건설",
+    "title": "이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 25,
+    "studentId": "26025",
+    "name": "박승옥",
+    "company": "육송㈜",
+    "title": "회장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 26,
+    "studentId": "26026",
+    "name": "박옥진",
+    "company": "마롬커뮤니케이션",
+    "title": "기획이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 27,
+    "studentId": "26027",
+    "name": "박준형",
+    "company": "국토교통부",
+    "title": "토지정책관",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "결석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "결석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 28,
+    "studentId": "26028",
+    "name": "박홍주",
+    "company": "㈜씨에이파트너스",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 29,
+    "studentId": "26029",
+    "name": "방유진",
+    "company": "BNY Mellon 투자자문 ㈜",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 30,
+    "studentId": "26030",
+    "name": "백승준",
+    "company": "㈜원진엔지니어링",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "결석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 31,
+    "studentId": "26031",
+    "name": "송철한",
+    "company": "㈜스페이스에코",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 32,
+    "studentId": "26032",
+    "name": "심동한",
+    "company": "우미건설㈜",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 33,
+    "studentId": "26033",
+    "name": "안대호",
+    "company": "㈜나우동인건축사사무소",
+    "title": "대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 34,
+    "studentId": "26034",
+    "name": "양상화",
+    "company": "주식회사 개성건설",
+    "title": "상무이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 35,
+    "studentId": "26035",
+    "name": "오동진",
+    "company": "대신증권",
+    "title": "본부장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 36,
+    "studentId": "26036",
+    "name": "오재용",
+    "company": "한양증권",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 37,
+    "studentId": "26037",
+    "name": "우정혁",
+    "company": "주식회사 시너지로직고",
+    "title": "부사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 38,
+    "studentId": "26038",
+    "name": "이동걸",
+    "company": "신영증권㈜",
+    "title": "이사대우",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 39,
+    "studentId": "26039",
+    "name": "이명화",
+    "company": "㈜디자인그룹꼬시나",
+    "title": "대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 40,
+    "studentId": "26040",
+    "name": "이원석",
+    "company": "㈜림코",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 41,
+    "studentId": "26041",
+    "name": "이은",
+    "company": "주식회사 엠비앤홀딩스",
+    "title": "전무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 42,
+    "studentId": "26042",
+    "name": "이정혁",
+    "company": "로고스투자자문㈜",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 43,
+    "studentId": "26043",
+    "name": "이종원",
+    "company": "허브자산운용 주식회사",
+    "title": "상무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 44,
+    "studentId": "26044",
+    "name": "이충한",
+    "company": "신성연립소규모재건축정비사업조합",
+    "title": "조합장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 45,
+    "studentId": "26045",
+    "name": "장영은",
+    "company": "씨케이프라퍼티",
+    "title": "대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 46,
+    "studentId": "26046",
+    "name": "장용서",
+    "company": "㈜서정인터내셔날",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 47,
+    "studentId": "26047",
+    "name": "전정은",
+    "company": "㈜다원앤컴퍼니",
+    "title": "전무",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 48,
+    "studentId": "26048",
+    "name": "정용재",
+    "company": "삼성증권",
+    "title": "팀장/이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 49,
+    "studentId": "26049",
+    "name": "정지융",
+    "company": "㈜위더스",
+    "title": "사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 50,
+    "studentId": "26050",
+    "name": "정태희",
+    "company": "주식회사 바이오피아",
+    "title": "이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 51,
+    "studentId": "26051",
+    "name": "정호경",
+    "company": "㈜삼건사",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 52,
+    "studentId": "26052",
+    "name": "조민호",
+    "company": "㈜원포올디앤씨",
+    "title": "대표이사",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 53,
+    "studentId": "26053",
+    "name": "조일훈",
+    "company": "JMC파트너스",
+    "title": "대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "결석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 54,
+    "studentId": "26054",
+    "name": "채지원",
+    "company": "루시아홀딩스㈜",
+    "title": "회장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "결석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 55,
+    "studentId": "26055",
+    "name": "최상권",
+    "company": "하우스테일러공인중개사사무소",
+    "title": "대표",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 56,
+    "studentId": "26056",
+    "name": "최재진",
+    "company": "HL디앤아이 한라",
+    "title": "팀장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 57,
+    "studentId": "26057",
+    "name": "최태진",
+    "company": "서초세무서",
+    "title": "조사팀장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 58,
+    "studentId": "26058",
+    "name": "태원출",
+    "company": "삼성물산㈜",
+    "title": "팀장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 59,
+    "studentId": "26059",
+    "name": "함경자",
+    "company": "㈜에스알비애드",
+    "title": "부사장",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "출석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "no": 60,
+    "studentId": "26060",
+    "name": "홍창표",
+    "company": "유진투자증권",
+    "title": "담당",
+    "records": [
+      {
+        "week": "1주차",
+        "dateLabel": "03.16",
+        "status": "출석"
+      },
+      {
+        "week": "2주차",
+        "dateLabel": "03.23",
+        "status": "출석"
+      },
+      {
+        "week": "3주차",
+        "dateLabel": "03.30",
+        "status": "출석"
+      },
+      {
+        "week": "4주차",
+        "dateLabel": "04.06",
+        "status": "결석"
+      },
+      {
+        "week": "5주차",
+        "dateLabel": "04.13",
+        "status": ""
+      },
+      {
+        "week": "6주차",
+        "dateLabel": "04.20",
+        "status": ""
+      },
+      {
+        "week": "7주차",
+        "dateLabel": "04.27",
+        "status": ""
+      },
+      {
+        "week": "8주차",
+        "dateLabel": "05.11",
+        "status": ""
+      },
+      {
+        "week": "9주차",
+        "dateLabel": "05.18",
+        "status": ""
+      },
+      {
+        "week": "10주차",
+        "dateLabel": "06.01",
+        "status": ""
+      },
+      {
+        "week": "11주차",
+        "dateLabel": "06.08",
+        "status": ""
+      },
+      {
+        "week": "12주차",
+        "dateLabel": "06.15",
+        "status": ""
+      }
+    ]
+  }
+]
